@@ -108,6 +108,24 @@
         registration.'); AND Session::get('successmessage')</p>
     <p>Finally in the RegisterRequest file we navigate back to the page where the form was. eg.: return
         redirect()->back(); OR with the simplified version: </p>
+
+    <h2>Configuration</h2>
+    <p>.env file. Here you can define the database name and password.</p>
+    <p>Configuration settings are in the config folder too.</p>
+    <p>After setting a new config data the config cache must be recreated. The config cache data is collected in the
+        bootstrap/cache folder. To recreate the config cache files use this command: php artisan config:cache</p>
+    <h2>Databases</h2>
+    <p>database/migration folder, here are ...table.php files</p>
+    <p>Tables define a data structure (Schema). You can change them or create a new one.</p>
+    <p>To create the tables in the database use this command: php artisan migrate</p>
+    <p>nullable() - you can define null default value. Default is 'required'.</p>
+    <p>rememberToken(), timestamps() has inbuild default value null, we don't have to set it.</p>
+    <p>rememberToken() needed if you want a page to remember you when login.</p>
+
+    <p>creating fake data: seeders/DatabaseSedder.php, comment out: \App\Models\User::factory(10)->create();</p>
+    <p>then: php artisan db:seed </p>
+    <p>előadás: 15:42</p>
+
 </body>
 
 </html>
