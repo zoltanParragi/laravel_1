@@ -1,6 +1,9 @@
 <?php
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +29,19 @@ Route::post('/', [UserController::class, 'register']);
 Route::get('/myroute', function () {
     return view('myroute');
 });
+
+Route::get('/blade', function () {
+    return view('blade', ['data' => 'Something to pass.']);
+});
+
+Route::get('/users', function () {
+    foreach(User::where('id', '>', 50)->where('id', '<', 55)->get() as $user) {
+        dump($user->name);
+    }
+});
+
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::post('/products', [ProductController::class, 'getproducts']);
