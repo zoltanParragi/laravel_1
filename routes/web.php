@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\GetUserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -48,3 +49,7 @@ Route::get('/products', function () {
 Route::post('/products', [ProductController::class, 'getproducts']);
 
 Route::get('/getusers', [GetUserController::class, 'getusers']);
+
+Route::get('/addusers', [GetUserController::class, 'getuser2s']);
+
+Route::post('/addusers', [AddUserController::class, 'adduser']);

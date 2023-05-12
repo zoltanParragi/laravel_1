@@ -15,16 +15,20 @@
         <input type="text" name="q" value={{ Request::get('q') }}>
         <button type="submit">Küld</button>
     </form>
+    {{-- {{ var_dump($user_list) }} --}}
 
     <table border=1 cellpadding=5>
         @foreach ($user_list as $user)
             <tr>
-                <td>{{ $user['id'] }}</td>
-                <td>{{ $user['name'] }}</td>
-                <td>{{ $user['email'] }}</td>
+                {{-- <td>{{ $user->id }}</td> --}}
+                <td>{{ $user->name }}</td>
+                {{-- <td>{{ $user->email }}</td> --}}
+                <td>{{ $user->user_email }}</td>
             </tr>
         @endforeach
     </table>
+
+    {{-- <p>{{ $user_list }}</p> --}}
 
 </body>
 

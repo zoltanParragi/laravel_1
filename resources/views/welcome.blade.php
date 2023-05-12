@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <nav>
+        <ul style="list-style-type: none; display: flex; justify-content: space-around;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/getusers">Get users</a></li>
+            <li><a href="/addusers">Add users</a></li>
+        </ul>
+    </nav>
     <h1>Laravel</h1>
     <h2>Installation</h2>
     <p>Needed:</p>
