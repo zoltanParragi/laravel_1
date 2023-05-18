@@ -25,6 +25,12 @@
             <div>{{ $message }}</div>
         @enderror
         <br><br>
+        <input type="number" id="salary" name="salary" id="salary" min="0" max="10000000"
+            placeholder="salary">
+        @error('salary')
+            <div>{{ $message }}</div>
+        @enderror
+        <br><br>
         <input type="password" name="password" id="password" placeholder="password">
         @error('password')
             <div>{{ $message }}</div>
@@ -44,6 +50,9 @@
                 @foreach ($user->posts_json as $post)
                     <span>{{ $post->name }}, </span>
                 @endforeach
+            @endif
+            @if ($user->salary)
+                salary: {{ $user->formatted_salary }}.
             @endif
         </p>
     @endforeach

@@ -18,6 +18,8 @@ class CreateUser2sTable extends Migration
             $table->string('name');
             $table->string('email')->uniqe();
             $table->string('password');
+            $table->string('posts_json');
+            $table->int('salary');
             $table->timestamps();
         });
     }

@@ -27,6 +27,7 @@ class AddUserRequest extends FormRequest
             "name"=>'required|min:3|max:20',
             "email"=>'required|email',
             "password"=>'required|min:4|max:20|confirmed',
+            "salary"=>'numeric|nullable',
         ];
     }
 }

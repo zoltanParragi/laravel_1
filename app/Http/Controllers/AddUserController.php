@@ -46,6 +46,7 @@ class AddUserController extends Controller
             'email'=>$request->email,
             'password'=>$request->password,
             'posts_json'=>$this->posts_array,
+            'salary'=>$request->salary,
         ]);
 
         return redirect()->back()->with('successmessage', 'User successfully added.');

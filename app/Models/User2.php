@@ -27,5 +27,8 @@ class User2 extends Model
         return json_decode($this->attributes['posts_json']);
     }
 
-
+    function getFormattedSalaryAttribute() {
+    //  number_format: szám, tizedes kerekítés 0, tizedes szeparátor karakter nincs, ezres szeparátor: szóköz
+        return number_format($this->attributes['salary'], 0, '', ' ').' Ft';
+    }
 }
